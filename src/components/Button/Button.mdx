@@ -1,0 +1,68 @@
+import { Meta, Primary, Controls, Canvas } from "@storybook/blocks";
+import * as Story from "./Button.stories.ts";
+
+{/* Associação da documentação às stories do componente */}
+<Meta of={Story} /> 
+
+# Button docs
+
+This a button. Shocking.
+
+## Default button 
+
+{/* Bloco Canvas para exibir variantes do componente */}
+<Canvas of={Story.Primary} />
+
+### Default disabled
+
+<Canvas of={Story.PrimaryDisabled} />
+
+### Default button secondary
+
+<Canvas of={Story.Secondary} />
+
+### Default secondary disabled
+
+<Canvas of={Story.SecondaryDisabled} />
+
+### Default button tertiary
+
+<Canvas of={Story.Tertiary} />
+
+### Default tertiary disabled
+
+<Canvas of={Story.TertiaryDisabled} />
+
+## Violet theme
+
+This is how button will look when the violet theme is applied.
+
+<Canvas of={Story.Violet} />
+
+### Violet disabled
+
+<Canvas of={Story.VioletDisabled} />
+
+### Violet secondary
+
+<Canvas of={Story.VioletSecondary} />
+
+### Violet secondary disabled
+
+<Canvas of={Story.VioletSecondaryDisabled} />
+
+### Violet tertiary
+
+<Canvas of={Story.VioletTertiary} />
+
+### Violet tertiary disabled
+
+<Canvas of={Story.VioletTertiaryDisabled} />
+
+## Interactive Doc
+
+{/* Bloco Primary exibe a story padrão do componente  */}
+<Primary />
+
+{/* Exibe as props disponíveis para o componente Primary */}
+<Controls />

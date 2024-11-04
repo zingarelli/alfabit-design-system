@@ -1,7 +1,119 @@
+/* diretivas do Tailwind para injetar o Tailwind no CSS */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --azul-primario: #2D5BFF;
+/* 
+  Obtida do Google Fonts. 
+  https://fonts.google.com/specimen/Mulish
+*/
+@font-face {
+  /* nome para usar a fonte no CSS */
+  font-family: 'Mulish';
+  src: url(../app/fonts/Mulish-Regular.ttf) format('truetype');
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
+
+/* configurando a font-family a ser usada por qualquer elemento */
+* {
+  font-family: 'Mulish', sans-serif;
+}
+
+/* 
+  Adicionando variáveis customizadas para a camada "base". Esta é a camada 
+  que contém os estilos base que o Tailwind aplica aos elementos HTML. 
+  Vamos utilizá-la no arquivo tailwind.config.ts.
+*/
+@layer base {
+  :root {
+    /* 
+      Variáveis de cor definidas pelos canais RGB, separado por espaço. 
+      No arquivo tailwind.config.ts nós chamamos a função rgb(), o que 
+      nos permite usar a sintaxe do Tailwind para adicionar o canal alpha
+      para incluir opacidade.
+    */
+    --primary: 45 91 255;
+    --secondary: 98 132 253;
+    --tertiary: 150 173 255;
+    --quaternary: 236 240 255;
+
+    /* modificadores de estado */
+    --hover: 27 74 240;
+    --click: 0 46 208;
+    --icon: 124 123 123;
+    --outline: 215 215 215;
+    --divider: 237 237 237;
+
+    /* background */
+    --bg-light: 255 255 255;
+    --bg-dark: 248 248 248;
+    --bg-disabled: 239 239 239;
+
+    /* text */
+    --text-primary: 24 24 24;
+    --text-secondary: 92 92 92;
+    --text-tertiary: 116 116 116;
+    --text-disabled: 138 138 138;
+
+    /* 
+      Variáveis de tamanho de tela. Isso infelizmente não funciona, pois 
+      as media queries não trabalham com variáveis CSS. Foram deixadas aqui 
+      somente como referência.    
+    */
+    --screen-mobile: 640px;
+    --screen-tablet: 1024px;
+    --screen-desktop: 1440px;
+    --screen-tv: 1920px;
+
+    /* Shadows */
+    --shadow-sm: 0px 0px 10px rgba(132, 132, 132, 15%);
+    --shadow-md: 0px 0px 20px rgba(132, 132, 132, 20%);
+    --shadow-lg: 0px 0px 30px rgba(132, 132, 132, 25%);
+    --shadow-focus: 0px 0px 0px 2px #643296;
+    --shadow-outline: 0px 0px 0px 2px #E8E8E8;
+    --shadow-button-focus: 0px 0px 0px 2px #AF4BFE;
+
+    /* Blur */
+    --blur: 4px;
+
+    /* Spacing */
+    --spacing-none: 0px;
+    --spacing-4xs: 8px;
+    --spacing-2xs: 12px;
+    --spacing-xs: 16px;
+    --spacing-sm: 20px;
+    --spacing-md: 24px;
+    --spacing-lg: 32px;
+    --spacing-xl: 40px;
+    --spacing-2xl: 48px;
+    --spacing-4xl: 56px;
+
+    /* Border Radius */
+    --border-radius-none: 0px;
+    --border-radius-sm: 4px;
+    --border-radius-md: 8px;
+    --border-radius-lg: 16px;
+
+    /* Font Size */
+    --text-xs: 12px;
+    --text-sm: 14px;
+    --text-nd: 16px;
+    --text-lg: 18px;
+    --text-xl: 20px;
+  }
+
+  /* 
+    Adicionando valores diferentes às variáveis quando uma classe é 
+    adicionada no CSS. Isso permite a criação de diferentes temas. 
+    Se o nome de uma variável já foi declarada no :root, seu valor será 
+    sobrescrito com estes novos valores.
+  */
+  .theme-violet {
+    --primary: 175 75 254;
+    --secondary: 190 116 249;
+    --tertiary: 226 189 255;
+    --quaternary: 245 232 255;
+  }
 }

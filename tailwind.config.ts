@@ -68,6 +68,7 @@ const config: Config = {
         icon: 'rgb(var(--icon))',
         outline: 'rgb(var(--outline))',
         divider: 'rgb(var(--divider))',
+        disabled: 'rgb(var(--text-disabled))',
       },
       // cores adicionais disponíveis somente para background (bg-*)
       backgroundColor: {
@@ -85,7 +86,6 @@ const config: Config = {
           secondary: 'rgb(var(--text-secondary))',
           tertiary: 'rgb(var(--text-tertiary))',
         },
-        disabled: 'rgb(var(--text-disabled))',
       },
       boxShadow: {
         sm: 'var(--shadow-sm)',
